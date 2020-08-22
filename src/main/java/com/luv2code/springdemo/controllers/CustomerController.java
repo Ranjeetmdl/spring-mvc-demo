@@ -36,6 +36,9 @@ public class CustomerController {
 	public String processForm(@Valid @ModelAttribute("customer") 
 	Customer theCustomer, BindingResult bindingResults){
 		System.out.println("Last Name :|"+theCustomer.getLastName()+"|");
+		
+		System.out.println("Binding Results :"+bindingResults);
+		
 		if(bindingResults.hasErrors()){
 			return "customer-form";
 		}else{
